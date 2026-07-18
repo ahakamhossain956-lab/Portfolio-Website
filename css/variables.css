@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Global Resets & Utilities
+   ========================================================================== */
+   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+:root {
+    --primary-color: #8492FF;
+    --secondery-color: #63BCFC;
+    --gradient: linear-gradient(to right, #8492FF, #63BCFC); /* Added missing semicolon */
+    --text-color: #777777;
+}
