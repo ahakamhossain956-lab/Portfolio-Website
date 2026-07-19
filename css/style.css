@@ -1,32 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap'); 
-
 @import url('./variables.css');
 
+/* ========================================================================================== */
+/* Global Resets & Theme Integrations                                                         */
+/* ========================================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color, #ffffff);
+    color: var(--text-color, #111827);
+}
 
 /* ========================================================================================== */
-                                        /* Header */
+/* Structural Layout Bounding Boxes                                                           */
 /* ========================================================================================== */
+.container {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;    
+    padding: 0 24px;   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
 
+/* ========================================================================================== */
+/* Header & Mobile Drawer System                                                              */
+/* ========================================================================================== */
 .header {
     width: 100%;
     height: 70px;
     display: flex;
     justify-content: center;
-    background-color: #fff;
+    background-color: var(--bg-surface, #ffffff);
     position: relative;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-/* The Container grid bounding box */
-.container {
-    width: 100%;
-    max-width: 1200px; /* Locks maximum desktop display area width */
-    margin: 0 auto;    /* Centers the layout container area on screens */
-    padding: 0 24px;   /* Consistent spacing boundary on mobile windows */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
+    z-index: 100;
 }
 
 .header__logo {
@@ -34,68 +49,13 @@
     align-items: center;
 }
 
-/* Base navigation setup (Full dark overlay layer) */
-.nav {
-    position: fixed;
-    height: 100dvh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Smooth overlay backdrop tint */
-    margin: 0;
-    top: 0;
-    left: -100%; /* Keeps everything off-screen initially */
-    z-index: 900;
-    transition: left 0.4s ease, background-color 0.4s ease;
-}
-
-/* Left Sidebar Panel container grid layer */
-.nav__list {
-    height: 100dvh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    list-style: none;
-    width: 40%;
-    min-width: 260px; /* Prevents sidebar getting squished on tiny phone sizes */
-    background-color: rgba(0,0,0,0.7); /* Clean, deep solid tone layout panel */
-    padding: 40px 24px 24px 24px;
-    display: flex;
-    flex-direction: column;
-}
-
-.nav__link {
-    text-decoration: none;
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-    display: inline-block;
-}
-
-.nav__item {
-    margin-top: 24px;
-}
-
-.nav__item:nth-child(1) .nav__link {
-    color: var(--primary-color);
-}
-
-/* Temporarily hidden fallback targets */
-.nav__item--has-dropdown {
-    display: none;
-}
-
-/* ========================================================================================== */
-                                    /* Interactive Menu Controls */
-/* ========================================================================================== */
-
 .header__checkbox {
-    display: none; /* Hide standard structural box widget away */
+    display: none; 
 }
 
 .header__menu {
     position: relative;
-    z-index: 1000; /* Must sit higher than .nav overlay layer to remain clickable */
+    z-index: 1000; 
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -105,26 +65,70 @@
     height: 40px;
 }
 
-/* Changed ID selectors to Class targets for cleaner validation structure */
 .menu__line {
     display: block;
     width: 28px;
     height: 2px;
-    background-color: black;
+    background-color: var(--text-dark, #111827);
     margin: 3px 0;
     transition: transform 0.3s ease, opacity 0.2s ease, background-color 0.3s ease;
 }
 
-/* ========================================================================================== */
-                                    /* Active States Engine */
-/* ========================================================================================== */
+/* Base navigation overlay drawer (Mobile State) */
+.nav {
+    position: fixed;
+    height: 100dvh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    top: 0;
+    left: -100%; 
+    z-index: 900;
+    transition: left 0.4s ease;
+}
 
-/* Bring slide menu panel overlay out into visibility view bounds */
+.nav__list {
+    height: 100dvh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+    width: 70%;
+    max-width: 300px; 
+    background-color: var(--bg-main, #111827); 
+    padding: 80px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__item {
+    margin-top: 24px;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.nav__item:nth-child(1) .nav__link {
+    color: var(--primary-color, #059669);
+}
+
+.nav__item--has-dropdown {
+    display: none;
+}
+
+/* ========================================================================================== */
+/* Checkbox Active Drawer Transformations                                                     */
+/* ========================================================================================== */
 .header:has(.header__checkbox:checked) .nav {
     left: 0;
 }
 
-/* Morph structural hamburger elements to form cross mark shape layout */
 .header:has(.header__checkbox:checked) .two {
     opacity: 0;
     transform: scale(0);
@@ -132,94 +136,109 @@
 
 .header:has(.header__checkbox:checked) .one {
     transform: translateY(8px) rotate(45deg);
-    background-color: white; /* Switches icon line light to show over dark panel */
+    background-color: #ffffff; 
 }
 
 .header:has(.header__checkbox:checked) .three {
-    transform: translateY(-8px) rotate(-45deg);
-    background-color: white;
+    transform: translateY(-8px) rotate(-44deg);
+    background-color: #ffffff;
 }
 
-
-/* ================================================================================== */
-                                            /* Hero Section  */
-/* ================================================================================== */
-
+/* ========================================================================================== */
+/* Hero Section Layout Modules                                                                */
+/* ========================================================================================== */
 .hero {
     width: 100%;
-    background-color: var(--bg-color);
-    padding: 32px 0;
+    background-color: var(--bg-surface, #f9fafb);
+    padding: 48px 0;
 }
 
-.hero__container{
+.hero__container, .about__container {
+    display: flex;
     flex-direction: column;
-    row-gap: 8px;
+    row-gap: 32px;
     align-items: center;
-    justify-content: center;
 }
 
-.hero__details{
+.hero__details, .about__details {
     width: 100%;
 }
 
-.hero__details h6{
+.hero__details h6, .about__details h6 {
     font-size: 14px;
-    color: var(--text-color);
+    color: var(--text-muted, #4b5563);
     font-weight: 600;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.hero__name{
-    margin: 20px 0;
-    font-size: 30px;
-    line-height: 36px;
+.hero__title, .about__title {
+    margin: 16px 0;
+    font-size:  32px;
+    line-height: 1.2;
+    color: #111827;
 }
 
-.hero__bio{
-    margin: 0 0 24px 0;
-    font-size: 14px;
+.hero__description, .about__description { 
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 300;
     color: var(--text-color);
 }
 
-.hero__btn{
+.btn {
     display: inline-block;
-    line-height: 42px;
+    line-height: 48px;
     font-size: 14px;
     text-decoration: none;
-    color: white;
+    color: #ffffff;
     font-weight: 500;
     padding: 0 32px;
     background: var(--gradient);
-    transition: box-shadow 0.3s ease;
+    margin: 32px 0 0 0;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-.hero__image{
-    height: 470px;
+/* Layout Shift Safeguards */
+.hero__image {
     width: 400px;
+    aspect-ratio: 4 / 5; 
+    overflow: hidden;
 }
 
-.hero-img {
-    height: auto;
-    max-width: 100%;
+.hero-img, .about-img {
+    width: 100%;
+    height: 100%;
     display: block;
-    object-fit: contain;
+    object-fit: cover; 
 }
 
+/* ========================================================================================== */
+/* About Section Modules                                                                      */
+/* ========================================================================================== */
+.about {
+    width: 100%;
+    background-color:#ffffff;
+    padding: 64px 0;
+}
 
+.about__details h6 {
+    font-weight: 400;
+}
 
+.about__image{
+    width: 100%;
+}
 
-
-
-
-/* ================================================================================== */
-                                            /* Hover  */
-/* ================================================================================== */
-
+/* ========================================================================================= */
+/* Isolate pointer mechanics smoothly to target desktops */
 @media (hover: hover) {
-    .nav__item:hover .nav__link {
-        color: var(--primary-color);
+    .nav__link:hover {
+        color: var(--primary-color) !important;
     }
-    .hero__btn:hover{
-        box-shadow: var(--shadow);
+    .btn:hover {
+        box-shadow: var(--shadow, 0 4px 12px rgba(0,0,0,0.15));
+        transform: translateY(-1px);
     }
 }
