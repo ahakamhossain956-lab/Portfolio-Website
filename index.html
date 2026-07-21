@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <title>Portfolio Website</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/8674d629b1.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
 
 <header class="header">
-    <!-- Checkbox placed at the top of the block so it can control the whole header state -->
+    <!-- Hidden Checkbox Controller for Drawer State -->
     <input type="checkbox" id="show-hide" class="header__checkbox">
 
     <div class="container">
-        <!-- Header logo -->
+        <!-- Brand Logo -->
         <div class="header__logo">
             <img src="./assets/images/logo.png" alt="Logo" class="header__logo-image">
         </div>
 
-        <!-- Hidden Overlay & Sidebar Navigation Combo -->
+        <!-- Navigation Drawer -->
         <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
@@ -27,16 +28,16 @@
                 <li class="nav__item"><a href="#" class="nav__link">Portfolio</a></li>
                 <li class="nav__item"><a href="#" class="nav__link">Pricing</a></li>
                 
-                <!-- Drop Down Item 1 (Blog) -->
+                <!-- Dropdown Item 1 -->
                 <li class="nav__item nav__item--has-dropdown">
                     <a href="#" class="nav__link">Blog</a>
                     <ul class="nav__dropdown">
                         <li class="nav__dropdown-item"><a href="#" class="nav__link">Blog Home</a></li>
-                        <li class="nav__dropdown-item"><a href="" class="nav__link">Blog single</a></li>
+                        <li class="nav__dropdown-item"><a href="#" class="nav__link">Blog Single</a></li>
                     </ul>
                 </li>
                 
-                <!-- Drop Down Item 2 (Pages) -->
+                <!-- Dropdown Item 2 -->
                 <li class="nav__item nav__item--has-dropdown">
                     <a href="#" class="nav__link">Pages</a>
                     <ul class="nav__dropdown">
@@ -55,8 +56,8 @@
             </ul>
         </nav>
 
-        <!-- Toggle Button UI -->
-        <label class="header__menu" for="show-hide">
+        <!-- Menu Hamburger Button -->
+        <label class="header__menu" for="show-hide" aria-label="Toggle Navigation">
             <span class="menu__line one"></span>
             <span class="menu__line two"></span>
             <span class="menu__line three"></span>
@@ -67,20 +68,17 @@
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero__container container">
-
-        <!-- Hero section details -->
         <div class="hero__details">
             <h6>THIS IS ME</h6>
             <h1 class="hero__title">AHAKAM HOSSAIN</h1>
-            <p class="hero__descriptioon">
+            <p class="hero__description">
                 You will begin to realise why this exercise is called the Dickens Pattern with reference to the ghost showing Scrooge some different futures.
             </p>
             <a href="#" class="hero__btn btn">DISCOVER NOW</a>
         </div>
 
-        <!-- hero section image -->
         <div class="hero__image">
-            <img src="./assets/images/hero-img.png" alt="hero image" class="hero-img">
+            <img src="./assets/images/hero-img.png" alt="Ahakam Hossain profile" class="hero-img">
         </div>
     </div>
 </section>
@@ -88,22 +86,106 @@
 <!-- About Section -->
 <section class="about">
     <div class="about__container container">
-
-        <!-- about section image -->
         <div class="about__image">
-            <img src="./assets/images/about-img.png" alt="about image" class="about-img">
+            <img src="./assets/images/about-img.png" alt="About Ahakam Hossain" class="about-img">
         </div>
 
-        <!-- About section details -->
         <div class="about__details">
             <h6>ABOUT ME</h6>
-            <h1 class="about__title">PERSONAL DETAILS</h1>
+            <h2 class="about__title">PERSONAL DETAILS</h2>
             <p class="about__description">
                 Here, I focus on a range of items and features that we use in life without giving them a second thought. such as Coca Cola. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
             </p>
             <a href="#" class="about__btn btn">DISCOVER NOW</a>
         </div>
+    </div>
+</section>
 
+<!-- Service Section -->
+<section class="service">
+    <div class="service__container container">
+        <h2 class="service__title">My Offered Services</h2>
+        <p class="service__description">
+            At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected.
+        </p>
+
+        <div class="service__list">
+
+            <div class="service__item service1">
+                <p class="service__icon"><i class="fa-solid fa-chart-pie"></i></p>
+                <h3 class="service__item-title">Web Design</h3>
+                <p class="service__item-description">
+                    “It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.”
+                </p>
+            </div>
+
+            <div class="service__item service2">
+                <p class="service__icon"><i class="fa-brands fa-react"></i></p>
+                <h3 class="service__item-title">web Development</h3>
+                <p class="service__item-description">
+                    If you are an entrepreneur, you know that your success cannot depend on the opinions of others. Like the wind, opinions.
+                </p>
+            </div>
+            
+            <div class="service__item service3">
+                <p class="service__icon"><i class="fa-solid fa-camera"></i></i></p>
+                <h3 class="service__item-title">Photography</h3>
+                <p class="service__item-description">
+                    Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills.
+                </p>
+            </div>
+
+            <div class="service__item service4">
+                <p class="service__icon"><i class="fa-solid fa-image"></i></p>
+                <h3 class="service__item-title">Clipping Path</h3>
+                <p class="service__item-description">
+                    Hypnosis quit smoking methods maintain caused quite a stir in the medical world over the last two decades. There is a lot of argument.
+                </p>
+            </div>
+
+            <div class="service__item service5">
+                <p class="service__icon"><i class="fa-solid fa-mobile"></i></p>
+                <h3 class="service__item-title">App Interface</h3>
+                <p class="service__item-description">
+                    Do you sometimes have the feeling that you’re running into the same obstacles over and over again? Many of my conflicts.
+                </p>
+            </div>
+
+            <div class="service__item service1">
+                <p class="service__icon"><i class="fa-solid fa-rocket"></i></p>
+                <h3 class="service__item-title">Graphic Design</h3>
+                <p class="service__item-description">
+                    You’ve heard the expression, “Just believe it and it will come.” Well, technically, that is true, however, ‘believing’ is not just thinking that.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Completed Project Section  -->
+
+<section class="completed-project">
+    <div class="completed-project__container container">
+
+        <div class="completed-project__item">
+            <h2 class="completed-project__number project">2536</h2>
+            <p class="completed-project__title">Projects Completed</p>
+        </div>
+        
+        <div class="completed-project__item">
+            <h2 class="completed-project__number clints">6784</h2>
+            <p class="completed-project__title">Clients Satisfied</p>
+        </div>
+
+        <div class="completed-project__item">
+            <h2 class="completed-project__number coffee">2239</h2>
+            <p class="completed-project__title">Cups of Coffee</p>
+        </div>
+
+        <div class="completed-project__item">
+            <h2 class="completed-project__number professionals">434</h2>
+            <p class="completed-project__title">Real Professionals</p>
+        </div>
     </div>
 </section>
 

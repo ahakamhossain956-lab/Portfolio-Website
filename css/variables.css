@@ -11,6 +11,7 @@
 html, body {
     height: 100%;
     font-family: sans-serif;
+    overflow-x: clip;
 }
 
 :root {
@@ -18,4 +19,5 @@ html, body {
     --secondery-color: #63BCFC;
     --gradient: linear-gradient(to right, #8492FF, #63BCFC); /* Added missing semicolon */
     --text-color: #777777;
+    --shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
