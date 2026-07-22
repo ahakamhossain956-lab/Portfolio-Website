@@ -276,7 +276,7 @@ body {
 
 .service__list, .completed-project__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 48px;
     padding: 48px 0;
     width: 100%;
@@ -325,7 +325,7 @@ body {
 
 .completed-project__container{
     padding:  0;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 }
 
 .completed-project__item{
@@ -386,7 +386,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .lists__heading ul{
@@ -395,6 +394,7 @@ body {
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -416,7 +416,7 @@ body {
 
 .lists__items{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 32px;
     width: 100%;
 }
@@ -432,27 +432,51 @@ body {
     transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-.lists__image{
-    height: 100%;
+.lists__image {
+    position: relative;
     width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
-.lists__image img{
+.lists__image > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
+    display: block;
 }
 
-.lists__item-title{
+.lists__item-title {
     color: #111827;
 }
 
-.lists__item-tag{
+.lists__item-tag {
     color: var(--text-color);
     font-size: 12px;
 }
 
+.lists__top-bg {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.lists__top-bg img {
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
 
 
 
@@ -487,5 +511,10 @@ body {
 
     .lists__heading-item:hover .lists__heading-link{
         color: var(--primary-color);
+    }
+
+    .lists__item:hover .lists__top-bg {
+        opacity: 0.8;
+        
     }
 }
