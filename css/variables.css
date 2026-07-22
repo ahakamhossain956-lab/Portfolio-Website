@@ -36,3 +36,96 @@ html, body {
     justify-content: space-between;
     height: 100%;
 }
+
+.featured-projects__title,
+.service__title,
+.feedback__title,
+.choose-plan__title{
+    font-size: 30px;
+    text-align: center;
+    color: #111827;
+}
+
+.featured-projects__description,
+.feedback__description,
+.service__description,
+.choose-plan__description{
+    font-size: 14px;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 300;
+    margin-top: 0;
+}
+
+/* Shared Buttons */
+.btn {
+    display: inline-block;
+    line-height: 48px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 0 32px;
+    background: var(--gradient);
+    margin-top: 32px;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+
+/* ========================================================================================= */
+/* Hover & Interaction Mechanics                                                             */
+/* ========================================================================================= */
+@media (hover: hover) {
+    .nav__link:hover {
+        color: var(--primary-color);
+    }
+
+    .btn:hover {
+        box-shadow: var(--shadow);
+        transform: translateY(-2px);
+    }
+
+    .service__item:hover {
+        box-shadow: var(--shadow);
+        transform: translateY(-4px);
+    }
+
+    .service__item:hover .service__icon{
+        color: var(--primary-color);
+    }
+
+    .service__item:hover .service__item-title {
+        color: var(--primary-color);
+    }
+
+    .lists__heading-item:hover .lists__heading-link{
+        color: var(--primary-color);
+    }
+
+    .lists__item:hover .lists__top-bg {
+        opacity: 0.8;
+    }
+
+    .plan:hover{
+    background: var(--gradient);
+    scale: 1.1;
+    }
+
+    .plan:hover .box1{
+        background-color: #98C5FE;
+    }
+
+    .plan:hover .plan__num{
+        background-color: #7FB2FD;
+        color: white;
+    }
+
+    .plan:hover .plan__price{
+        display: none;
+    }
+
+    .plan:hover .plan__btn{
+        display: block;
+    }
+}
