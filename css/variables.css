@@ -40,7 +40,8 @@ html, body {
 .featured-projects__title,
 .service__title,
 .feedback__title,
-.choose-plan__title{
+.choose-plan__title,
+.blog-section__title{
     font-size: 30px;
     text-align: center;
     color: #111827;
@@ -49,12 +50,14 @@ html, body {
 .featured-projects__description,
 .feedback__description,
 .service__description,
-.choose-plan__description{
+.choose-plan__description,
+.blog-section__description{
     font-size: 14px;
     text-align: center;
     color: var(--text-color);
     font-weight: 300;
     margin-top: 0;
+    max-width: 700px;
 }
 
 /* Shared Buttons */
@@ -127,5 +130,13 @@ html, body {
 
     .plan:hover .plan__btn{
         display: block;
+    }
+
+    .blog:hover .blog__img img{
+        scale: 1.1;
+    }
+
+    .blog:hover .blog__title{
+        color: var(--primary-color);
     }
 }
