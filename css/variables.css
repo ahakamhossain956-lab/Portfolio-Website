@@ -30,7 +30,7 @@ html, body {
     width: 100%;
     max-width: 1200px; 
     margin: 0 auto;    
-    padding: 0 24px;   
+    padding: 0 5%;   
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -137,6 +137,14 @@ html, body {
     }
 
     .blog:hover .blog__title{
+        color: var(--primary-color);
+    }
+
+    .footer__email .fa-arrow-right:hover {
+        opacity: 0.9;
+    }
+
+    .footer__social a:hover {
         color: var(--primary-color);
     }
 }
