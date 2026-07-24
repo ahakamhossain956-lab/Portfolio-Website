@@ -21,22 +21,6 @@ html, body {
     --shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-
-/* ========================================================================================== */
-/* Structural Layout Containers                                                               */
-/* ========================================================================================== */
-
-.container {
-    width: 100%;
-    max-width: 1200px; 
-    margin: 0 auto;    
-    padding: 0 5%;   
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-}
-
 .featured-projects__title,
 .service__title,
 .feedback__title,
@@ -147,4 +131,70 @@ html, body {
     .footer__social a:hover {
         color: var(--primary-color);
     }
+}
+
+
+
+
+
+
+
+
+
+/* ===========================
+   Container
+=========================== */
+
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem; /* 16px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Small devices */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+    padding-inline: 1.25rem; /* 20px */
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-inline: 1.5rem; /* 24px */
+  }
+}
+
+/* Small laptops */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding-inline: 2rem; /* 32px */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+/* Ultra-wide */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
 }
