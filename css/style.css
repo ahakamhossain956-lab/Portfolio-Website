@@ -791,6 +791,91 @@ body {
     }
 }
 
+/* ========================================================================================= */
+/* Footer section                                                                */
+/* ========================================================================================= */
+
+footer{
+    width: 100%;
+    padding: 100px 0;
+    background-color: #04091E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    align-items: start;
+    justify-content: center;
+}
+
+.footer__about-me,
+.footer__news-letter,
+.footer__follow-me{
+    padding: 0 16px;
+}
+
+footer h3{
+    color: white;
+    margin-bottom: 12px;
+}
+
+footer p{
+    font-size: 14px;
+}
+
+footer span{
+    color: var(--primary-color);
+}
+
+.footer__email {
+    display: flex; /* Aligns input and button side-by-side */
+    align-items: center;
+    width: 100%;
+    max-width: 350px; /* Limits max width for better design */
+    margin-top: 16px;
+    border-radius: 4px; /* Optional: smooth edges */
+    overflow: hidden; /* Ensures icon & input fit together cleanly */
+}
+
+.footer__email input {
+    width: 100%;
+    padding: 12px 16px;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+.footer__email input::placeholder {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9ca3af;
+}
+
+.footer__email .fa-arrow-right {
+    display: flex; /* Flexbox centers the icon inside its box */
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevents button from shrinking when typing long emails */
+    transition: background-color 0.3s ease;
+}
+
+.footer__email .fa-arrow-right:hover {
+    opacity: 0.9;
+}
+
+
+
+
 
 
 
